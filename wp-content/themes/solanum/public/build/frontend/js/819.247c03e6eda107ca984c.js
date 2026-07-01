@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksolanum=self.webpackChunksolanum||[]).push([[819],{819:(e,t,n)=>{n.d(t,{default:()=>o});const o=async()=>{const{gsap:e}=await n.e(358).then(n.bind(n,358)),t=(document.querySelector(".hero"),document.querySelector(".hero-content"));e.to(t,{y:0,opacity:1,duration:1})}}}]);

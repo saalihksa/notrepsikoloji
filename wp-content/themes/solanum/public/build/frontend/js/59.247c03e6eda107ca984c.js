@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksolanum=self.webpackChunksolanum||[]).push([[59],{59:(e,t,s)=>{s.d(t,{delegateEventListener:()=>a});const a=(e,t,s,a)=>{t.split(" ").forEach((t=>{e.addEventListener(t,(t=>{e.contains(t.target)&&t.target.closest(s)&&a.call(t.target,t)}))}))}}}]);

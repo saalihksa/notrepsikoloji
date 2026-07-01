@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksolanum=self.webpackChunksolanum||[]).push([[499],{499:(s,u,a)=>{a.d(u,{default:()=>e});const e=async()=>{}}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksolanum=self.webpackChunksolanum||[]).push([[783],{783:(e,t,s)=>{s.d(t,{default:()=>l});class l{constructor(e){this.element=e,this.currentOffset=e.offsetHeight,document.documentElement.style.setProperty("--header-h",`${e.offsetHeight}px`)}get offset(){return this.currentOffset}set offset(e){this.currentOffset=e}}}}]);
