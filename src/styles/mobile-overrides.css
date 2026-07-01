@@ -1,0 +1,771 @@
+/* TransCure mobil davranışına uyum — max-width: 78.98rem (1263px) */
+
+@media (max-width: 78.98rem) {
+  :root {
+    --header-h: 5rem;
+    --header-o: 5rem;
+    --header-offset: 5rem;
+  }
+
+  .header {
+    padding-block: 1.25rem 1rem;
+  }
+
+  .header-wrapper {
+    position: relative;
+  }
+
+  .menu {
+    position: static;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  .menu-wrapper:not([inert]) {
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  .menu-wrapper:focus,
+  .menu-wrapper:focus-visible,
+  #menu:focus,
+  #menu:focus-visible {
+    outline: none;
+  }
+
+  html[data-nav-menu='open'] .header {
+    --header-bg: var(--color-navbar-bg);
+    --header-color: var(--color-black);
+    --logo-color: var(--color-burgundy);
+    z-index: 1001;
+  }
+
+  /* Hero / slider üzerinde mobil: menü kapalıyken header şeffaf, krem metin */
+  html:is([data-header-overlay='true']):is([data-menu='close']):is([data-nav-menu='close'])
+    .header {
+    --header-bg: transparent;
+    --header-color: var(--color-cream);
+    --logo-color: var(--color-cream);
+  }
+
+  .menu-item.buttons .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-link {
+    font-size: 1.125rem;
+    padding-block: 0.25rem;
+  }
+
+  .submenu-list:is(.submenu-list--level-1) {
+    gap: 1.25rem;
+  }
+
+  .submenu-link {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Mobil alt menü — TransCure: tam ekran panel */
+  .submenu {
+    background-color: var(--color-cream);
+    color: var(--color-black);
+  }
+
+  .submenu-header {
+    padding-block: 1.5rem 1.25rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .submenu-title {
+    color: var(--color-black);
+    font-weight: 500;
+  }
+
+  .submenu-content {
+    padding-block: 1.5rem 2rem;
+  }
+
+  .submenu--simple .submenu-list--level-1 {
+    gap: 1.25rem;
+  }
+
+  .submenu--grouped .submenu-item--level-1:not(:last-child) {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .submenu--grouped .submenu-list-title {
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+
+  .submenu-close {
+    color: var(--color-black);
+  }
+
+  /* cardsFirstBig — mobilde featured kart + alt alta hizmet kartları */
+  .cardsFirstBig-item:first-child {
+    margin-bottom: 1rem;
+  }
+
+  .cardsFirstBig-item:not(:first-child) .cardsFirstBig-item-link {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 63.98rem) {
+  /* Hero — videolu ve statik (TransCure: tam ekran, içerik üst üste) */
+  .herohome {
+    min-height: 100svh;
+    height: auto;
+    padding-block-end: 3.5rem;
+  }
+
+  .herohome-content > div:last-child {
+    margin-top: 2rem;
+  }
+
+  .herohome-title {
+    font-size: clamp(1.75rem, 7.5vw + 0.5rem, 3rem);
+    line-height: 1.05;
+  }
+
+  .herohome-tagline {
+    font-size: 0.8125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .herohome-text .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero:not(:has(.hero-image)) {
+    padding-block-start: calc(var(--header-h, 112px) + 0.5rem);
+    padding-block-end: 2.5rem;
+  }
+
+  .hero:has(.hero-image) {
+    padding-block-start: calc(var(--header-h, 5rem) + 1.5rem);
+    padding-block-end: 3.5rem;
+  }
+
+  .hero:not(:has(.hero-image)) .hero-breadcrumbs,
+  .hero:not(:has(.hero-image)) .hero-back {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero:has(.hero-image) .hero-breadcrumbs,
+  .hero:has(.hero-image) .hero-back {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 6vw + 0.5rem, 2.75rem);
+  }
+
+  /* cards — mobil: başlık ve metin üst üste */
+  .cards-top {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .cards-text {
+    max-width: none;
+    margin-top: 1.5rem;
+    margin-left: 0;
+  }
+
+  .cards-item-link svg {
+    background-color: var(--color-burgundy);
+    border-color: var(--color-burgundy);
+    color: var(--color-cream);
+  }
+
+  /* imageContent — mobil: scale yok, sade metin reveal */
+  .imageContent {
+    padding-block: 0;
+  }
+
+  .imageContent-inner {
+    border-radius: 0;
+    transform: none !important;
+  }
+
+  .imageContent-image {
+    aspect-ratio: 16 / 9;
+    width: calc(100% + var(--container-gutter) * 2);
+    margin-left: calc(var(--container-gutter) * -1);
+    height: auto;
+  }
+
+  .imageContent-content {
+    padding: clamp(2.5rem, 8vw, 4rem) var(--container-gutter, 1.25rem);
+  }
+
+  .imageContent-title {
+    max-width: 22ch;
+    font-size: clamp(1.875rem, 7vw + 0.5rem, 2.5rem);
+    line-height: 1.12;
+  }
+
+  .imageContent-wysiwyg {
+    margin-top: clamp(2rem, 6vw, 2.75rem);
+    font-size: clamp(1.0625rem, 2.5vw + 0.75rem, 1.1875rem);
+    line-height: 1.55;
+  }
+
+  .imageContent-wysiwyg .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* cardsScroll — dikey kart listesi */
+  .cardsScroll-item {
+    padding: 1rem;
+  }
+
+  .cardsScroll-item:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .cardsScroll-item-inner {
+    padding: 1rem;
+  }
+
+  /* contentTags — mobil: tek sütun, etiketler sola hizalı */
+  .contentTags {
+    text-align: left;
+  }
+
+  .contentTags-ctr {
+    grid-template-columns: 1fr;
+  }
+
+  .contentTags-col:not(:last-child) {
+    margin-bottom: 3.5rem;
+  }
+
+  .contentTags-col:last-child {
+    justify-content: flex-start;
+  }
+
+  .contentTags-list {
+    align-items: flex-start;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .contentTags-item {
+    white-space: normal;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .contentTags-link {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Blog kartları — tek sütun */
+  .scientificPublications-top {
+    display: block;
+  }
+
+  .scientificPublications-link {
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .scientificPublications-item:first-child {
+    grid-row: auto;
+  }
+
+  .scientificPublications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scientificPubli-card--big {
+    aspect-ratio: 1;
+    min-height: 0;
+    max-width: 100%;
+  }
+
+  .scientificPubli-card--big .scientificPubli-card-link {
+    align-self: flex-end;
+    margin-left: 0;
+  }
+
+  /* CTA push — mobil sütun */
+  .push {
+    width: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+    border: none;
+  }
+
+  .push:has(.push-question) .push-ctr {
+    flex-direction: column;
+  }
+
+  .push-question {
+    margin-top: 1.25rem;
+    width: 100%;
+    max-width: none;
+  }
+
+  .push-question-image {
+    display: block;
+  }
+
+  .push-question-content .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .twoColsImgContent-wrapper .container,
+  .contactForm-ctr {
+    padding-inline: var(--side-margin);
+  }
+
+  /* Footer */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-text {
+    margin-block: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-socials {
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  .footer-top .footer-menu--main {
+    margin-top: 1.5rem;
+  }
+
+  .footer-legals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 47.98rem) {
+  :root {
+    --container-gutter: 1.25rem;
+  }
+
+  .header-logo-inner {
+    width: clamp(10rem, 34vw, 12.5rem);
+  }
+
+  .site-logo {
+    font-size: 1.125rem;
+    max-width: 11rem;
+    line-height: 1.15;
+  }
+
+  /* cardsFirstBig — featured kart min yükseklik, dekor gizli (TransCure) */
+  .cardsFirstBig-item:first-child {
+    min-height: 18.75rem;
+  }
+
+  .cardsFirstBig-item:first-child .cardsFirstBig-item-title {
+    font-size: clamp(1.5rem, 5vw + 0.5rem, 2rem);
+    max-width: none;
+  }
+
+  .cardsFirstBig-item-mouse {
+    display: none;
+  }
+
+  /* cards-item — kompakt padding ve grid-auto-rows düzeltmesi */
+  .cards-item {
+    padding-block-start: 1.25rem !important;
+    padding-block-end: 1.25rem !important;
+    padding-inline: 1.25rem !important;
+    border-radius: 1rem !important;
+  }
+
+  .cards-item:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  .cards-item-title {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .cards-item-text {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* grid-auto-rows: 1fr kart arası boşluk sorununu çözer */
+  .cards-grid {
+    grid-auto-rows: auto !important;
+  }
+
+  /* Hizmet detay adım grid mobil */
+  .svc-detail__steps-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 0.625rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Hizmet detay üst bölüm padding */
+  .svc-detail__top {
+    padding-block: 1.75rem !important;
+  }
+
+  /* cards-top mobil */
+  .svc-detail__cards-top {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .svc-detail__intro {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+    margin-bottom: 0.875rem;
+  }
+
+  /* Hizmet detay alt bölüm */
+  .svc-detail__bottom-row {
+    gap: 1.25rem;
+  }
+
+  .svc-detail__focus-block {
+    padding-top: 1rem;
+  }
+
+  .svc-detail__focus-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hizmetler listing kompakt */
+  .svc-index {
+    padding-block: 2rem;
+  }
+
+  .svc-index__group {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Diğer hizmetler */
+  .svc-related {
+    padding-block: 1.5rem;
+  }
+
+  /* SSS section mobil */
+  .sss-section {
+    padding-block: 2rem;
+  }
+
+  .sss-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .cardsPush-title,
+  .cardsLight-title,
+  .contentList-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .cardsPush-item,
+  .cardsLight-item,
+  .quote-ctr {
+    padding-block: 1.5rem;
+    padding-inline: 1.25rem;
+  }
+
+  .footer-tagline {
+    text-align: center;
+  }
+
+  .footer-top .footer-menu--main {
+    width: 100%;
+  }
+
+  .footer-top .footer-menu--main .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contact-form {
+    max-width: none;
+  }
+
+  .faq-item summary {
+    font-size: 1rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Blog listesi */
+  .sectionPosts .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-filters {
+    width: 100%;
+  }
+
+  .hero-filters .filters-select {
+    width: 100%;
+  }
+
+  .relatedPosts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-card-bottom {
+    gap: 1rem;
+  }
+
+  /* ── Hizmetler index — mobil ── */
+  .svc-index__link {
+    grid-template-columns: 1fr auto;
+    padding-block: 0.875rem;
+  }
+
+  .svc-index__desc {
+    display: none;
+  }
+
+  .svc-index__title {
+    font-size: 1rem;
+  }
+
+  /* ── Hizmet detay — mobil ── */
+  .svc-detail__steps-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+  }
+
+  .svc-detail__bottom-row {
+    gap: 1.5rem;
+  }
+
+  .svc-detail__rich {
+    font-size: 0.9375rem;
+  }
+
+  .svc-sidebar {
+    position: static !important;
+  }
+
+  /* ── Diğer hizmetler — mobil ── */
+  .svc-related__list {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── SSS — mobil ── */
+  .sss-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sss-cta__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sss-cta__actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Hakkımızda — mobil ── */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Blog detay — mobil ── */
+  .single-main .content-ctr {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 63.98rem) {
+  /* ── imageContent — kenar boşluğu + yuvarlatma (GSAP sadece desktop) ── */
+  .imageContent-inner {
+    margin-inline: var(--container-gutter, 1.25rem);
+    border-radius: 1.25rem;
+  }
+
+  /* imageContent-ctr border-radius: inherit alır, overflow: hidden ile görseli kırpar */
+  .imageContent .imageContent-ctr.container {
+    border-radius: 1.25rem;
+  }
+
+  /* ── Hizmet detay adımlar — tablet ── */
+  .svc-detail__steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: auto !important;
+  }
+
+  /* ── Hizmet sidebar — tablet ── */
+  .svc-sidebar {
+    position: static !important;
+  }
+
+  /* ── Hizmetler index açıklama — tablet ── */
+  .svc-index__desc {
+    display: none;
+  }
+
+  .svc-index__link {
+    grid-template-columns: minmax(0, 12rem) 1fr auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   KAPSAMLI MOBİL İYİLEŞTİRMELER
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 47.98rem) {
+  /* ── Push section — mobil kenar boşluğu artırma ── */
+  .push {
+    max-width: calc(100% - 2.5rem) !important;
+    width: calc(100% - 2.5rem) !important;
+    border-radius: 1.25rem !important;
+  }
+
+  .push-ctr {
+    --container-gutter: 1.25rem;
+  }
+
+  /* ── Hero — genel iç sayfa ── */
+  body:not(.home) .hero:not(:has(.hero-image)) {
+    padding-block-start: calc(var(--header-h, 5rem) + 1rem);
+    padding-block-end: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 6vw + 0.5rem, 2.5rem) !important;
+  }
+
+  .hero-wysiwyg p {
+    font-size: clamp(0.875rem, 3.5vw, 1rem) !important;
+  }
+
+  /* Görsel hero (blog detay, hizmet detay) */
+  .hero:has(.hero-image) {
+    padding-block-start: calc(var(--header-h, 5rem) + 1rem);
+    padding-block-end: 1.5rem;
+  }
+
+  /* ── Push section — metin boyutu ── */
+  .push:has(.push-question) .push-text {
+    font-size: clamp(1.375rem, 5vw + 0.25rem, 2rem) !important;
+  }
+
+  /* ── imageContent — hakkımızda fotoğraf ── */
+  .imageContent-image {
+    min-height: 16rem;
+    max-height: 22rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .imageContent-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .imageContent-title {
+    font-size: clamp(1.5rem, 5vw + 0.5rem, 2.125rem);
+    margin-bottom: 1rem;
+  }
+
+  .imageContent-wysiwyg {
+    font-size: 0.9375rem;
+  }
+
+  /* ── Contact page — mobil ── */
+  .contact-page__shell {
+    padding-block: 2rem;
+  }
+
+  .contact-slim {
+    gap: 2rem;
+  }
+
+  .contact-slim__map {
+    height: 12rem;
+  }
+
+  /* ── Hakkımızda — cards grid ── */
+  .hakkimizda-cards .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Blog detay — hero title ── */
+  .blog-detail .hero-title {
+    font-size: clamp(1.375rem, 5.5vw + 0.25rem, 2rem) !important;
+  }
+
+  /* ── KVKK — içerik alanı ── */
+  .kvkk-section .content-ctr,
+  .kvkk-content .container {
+    padding-inline: var(--container-gutter, 1.25rem);
+  }
+
+  /* ── SSS — accordion ── */
+  .sss-item__summary {
+    font-size: 0.9375rem !important;
+    padding-block: 0.875rem;
+    padding-right: 2rem;
+  }
+
+  /* ── Footer mobil ── */
+  .footer-tagline {
+    font-size: 0.8125rem;
+  }
+
+  /* ── Genel section padding küçültme ── */
+  .section,
+  .sectionPosts {
+    padding-block: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  /* ── Blog liste kartları — kompakt ── */
+  .sectionPosts .grid {
+    gap: 0.875rem;
+  }
+
+  .post-card {
+    row-gap: 1.5rem !important;
+    border-radius: 1rem !important;
+    padding-block-start: 1.125rem !important;
+    padding-block-end: 1.25rem !important;
+    padding-inline: 1.125rem !important;
+  }
+
+  .post-card-metas {
+    margin-top: 0.75rem !important;
+  }
+
+  .post-card-title {
+    font-size: 1rem !important;
+  }
+
+  .post-card-link {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+}

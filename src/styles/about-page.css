@@ -1,0 +1,351 @@
+/* ============================================================
+   Hakkımızda — Modern About Page
+   ============================================================ */
+
+.about-page {
+  background-color: var(--color-cream);
+}
+
+/* Eyebrow label (ortak) */
+.about-story__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+}
+
+/* ── İstatistikler ── */
+.about-stats {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+  padding-block: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.about-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .about-stats__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.about-stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.about-stats__number {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-cream);
+}
+
+.about-stats__label {
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--color-cream) 70%, transparent);
+  letter-spacing: 0.02em;
+}
+
+/* ── Hikayemiz ── */
+.about-story {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background-color: var(--color-cream);
+}
+
+.about-story__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 64rem) {
+  .about-story__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-story__title {
+  margin: 0 0 1.25rem;
+  color: var(--color-black);
+}
+
+.about-story__body {
+  margin: 0 0 1rem;
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 36rem;
+}
+
+.about-story__body + .button {
+  margin-top: 0.75rem;
+}
+
+.about-story__visual {
+  position: relative;
+}
+
+.about-story__image-wrap {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-burgundy-tint);
+}
+
+.about-story__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.about-story__badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 999px;
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--color-burgundy) 35%, transparent);
+}
+
+/* ── Misyon & Vizyon ── */
+.about-mv {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background-color: var(--color-burgundy-wash);
+}
+
+.about-mv__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .about-mv__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-mv__card {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-burgundy) 8%, transparent);
+}
+
+.about-mv__card--vision {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+  box-shadow: none;
+}
+
+.about-mv__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.875rem;
+  background-color: var(--color-burgundy-tint);
+  color: var(--color-burgundy);
+  margin-bottom: 1.25rem;
+}
+
+.about-mv__card--vision .about-mv__card-icon {
+  background-color: color-mix(in srgb, var(--color-cream) 15%, transparent);
+  color: var(--color-cream);
+}
+
+.about-mv__card-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.about-mv__card--vision .about-mv__card-title {
+  color: var(--color-cream);
+}
+
+.about-mv__card-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.about-mv__card--vision .about-mv__card-text {
+  color: color-mix(in srgb, var(--color-cream) 80%, transparent);
+}
+
+/* ── Değerlerimiz ── */
+.about-values {
+  padding-block: clamp(4rem, 8vw, 6rem);
+  background-color: var(--color-cream);
+}
+
+.about-values__header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.about-values__title {
+  margin: 0;
+  color: var(--color-black);
+}
+
+.about-values__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .about-values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .about-values__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.about-values__item {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-burgundy) 10%, transparent);
+  background-color: #ffffff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.about-values__item:hover {
+  box-shadow: 0 0.5rem 2rem color-mix(in srgb, var(--color-burgundy) 8%, transparent);
+  transform: translateY(-2px);
+}
+
+.about-values__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-burgundy-tint);
+  color: var(--color-burgundy);
+  margin-bottom: 1.25rem;
+}
+
+.about-values__item-title {
+  margin: 0 0 0.625rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.about-values__item-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ── Ekip CTA ── */
+.about-team-cta {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background-color: var(--color-burgundy-wash);
+}
+
+.about-team-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 56rem) {
+  .about-team-cta__inner {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.about-team-cta__title {
+  margin: 0 0 1rem;
+  color: var(--color-black);
+}
+
+.about-team-cta__desc {
+  margin: 0 0 1.75rem;
+  max-width: 32rem;
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.about-team-cta__avatars {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+@media (min-width: 56rem) {
+  .about-team-cta__avatars {
+    align-items: center;
+  }
+}
+
+.about-team-cta__avatar-stack {
+  display: flex;
+}
+
+.about-team-cta__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  border: 2.5px solid #ffffff;
+  background-color: hsl(var(--hue, 0) 45% 38%);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-left: -0.75rem;
+}
+
+.about-team-cta__avatar:first-child {
+  margin-left: 0;
+}
+
+.about-team-cta__avatar--more {
+  background-color: var(--color-burgundy-tint);
+  color: var(--color-burgundy);
+  font-size: 0.75rem;
+}
+
+.about-team-cta__avatar-label {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}

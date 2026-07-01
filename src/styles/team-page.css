@@ -1,0 +1,149 @@
+/* Ekibimiz — portre grid (referans UI) */
+
+.team-page {
+  background-color: #ffffff;
+}
+
+.team-page__board {
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+  background-color: #ffffff;
+}
+
+.team-page__grid {
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 48rem) {
+  .team-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .team-page__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.team-portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 0;
+  background-color: #f3f0eb;
+}
+
+.team-portrait__media {
+  position: absolute;
+  inset: 0;
+}
+
+.team-portrait__photo,
+.team-portrait__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.team-portrait__caption {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.125rem 1.125rem;
+  background-color: color-mix(in srgb, #ffffff 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.team-portrait__name {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1vw + 0.75rem, 1.0625rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-black);
+}
+
+.team-portrait__role {
+  margin: 0.35rem 0 0;
+  font-size: clamp(0.8125rem, 0.8vw + 0.65rem, 0.9375rem);
+  line-height: 1.35;
+  color: var(--color-text-muted);
+}
+
+.team-page__cta {
+  margin-block: 0 clamp(2rem, 4vw, 3rem);
+  margin-inline: auto;
+  max-width: calc(100% - 1rem);
+  width: calc(100% - 1rem);
+  padding: clamp(2rem, 4vw, 2.75rem);
+  border-radius: 1.5rem;
+  background-color: var(--color-burgundy-wash);
+}
+
+.team-page__cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 48rem) {
+  .team-page__cta-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+.team-page__cta-title {
+  margin: 0;
+  font-size: clamp(1.375rem, 2vw + 0.75rem, 1.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-black);
+}
+
+.team-page__cta-text {
+  margin: 0.65rem 0 0;
+  max-width: 36rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.team-page__cta-btn {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 2.5rem;
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.team-page__cta-btn:hover {
+  background-color: var(--color-burgundy-dark);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 29.98rem) {
+  .team-page__grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+}

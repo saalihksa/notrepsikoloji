@@ -1,0 +1,2026 @@
+/* Bordo / krem / siyah — global uygulama ve sabit renk override'ları */
+
+html {
+  color-scheme: light;
+  background-color: var(--color-cream);
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-black);
+}
+
+::selection {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+/* Ana sayfa — hero sonrası derin bölüm + .bg gradyan geçişi (TransCure) */
+body.home .cardsFirstBig {
+  background-color: var(--color-home-deep);
+  color: var(--color-cream);
+}
+
+body.home .bg {
+  background: transparent;
+}
+
+body.home .cardsFirstBig .cardsFirstBig-item:not(:first-child) {
+  border: none;
+  box-shadow: none;
+}
+
+body.home .cards {
+  background: var(--color-burgundy-wash);
+}
+
+.herohome-text {
+  color: var(--color-cream);
+}
+
+.herohome .cms,
+.herohome .cms p {
+  color: var(--color-cream);
+}
+
+/* Hero — içerik videonun üstünde, sağ sütun ortada */
+.herohome--video .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.herohome-title,
+.herohome-tagline,
+.herohome-text {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.herohome .reveal-line,
+.herohome .reveal-line div {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.herohome-title {
+  color: var(--color-cream);
+  font-size: clamp(2.5rem, 6vw + 0.5rem, 6rem);
+  line-height: 0.92;
+}
+
+@media (min-width: 64rem) {
+  .herohome-content > div:last-child {
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Dekoratif fare ikonları */
+.cardsFirstBig-item-mouse,
+.cardsPush-push-mouse,
+.twoColsCard-mouse,
+.contactForm-mouse {
+  color: var(--color-burgundy-muted);
+}
+
+.cardsFirstBig-item:first-child .cardsFirstBig-item-mouse {
+  color: var(--color-burgundy-light);
+  opacity: 0.28;
+}
+
+.cardsFirstBig-item:first-child .cardsFirstBig-item-title,
+.cardsFirstBig-item:first-child .cardsFirstBig-item-text,
+.cardsFirstBig-item:first-child .cardsFirstBig-item-text p {
+  color: var(--color-cream);
+  position: relative;
+  z-index: 1;
+}
+
+.icon[class*='mouse'] path,
+.cardsPush-push-mouse path,
+.contactForm-mouse path,
+.cardsFirstBig-item-mouse path,
+.twoColsCard-mouse path {
+  fill: currentColor !important;
+}
+
+/* Header — sticky, her zaman görünür */
+.header {
+  position: sticky;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  transition: background-color 0.5s ease;
+}
+
+@media (min-width: 79rem) {
+  .header {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% + var(--submenu-h, 0px)),
+      0 calc(100% + var(--submenu-h, 0px))
+    );
+    transition:
+      background-color 0.5s ease,
+      clip-path 0.5s ease;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: 100%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: calc(var(--viewport-height, 100vh) - 100%);
+    background-color: inherit;
+  }
+}
+
+/* Header — hero / slider üzerinde şeffaf; diğer alanlarda krem zemin (hover ile değişmez) */
+html:is([data-header-overlay='true']):is([data-menu='close']):is([data-nav-menu='close'])
+  body:not(:is(.error404))
+  .header {
+  --header-bg: transparent;
+  --header-color: var(--color-cream);
+  --logo-color: var(--color-cream);
+}
+
+html:not([data-header-overlay='true']) .header {
+  --header-bg: var(--color-navbar-bg);
+  --header-color: var(--color-black);
+  --logo-color: var(--color-burgundy);
+}
+
+.header-logo-inner {
+  position: relative;
+  display: block;
+  width: clamp(11.5rem, 10vw + 4rem, 14.5rem);
+  height: auto;
+  aspect-ratio: 390 / 180;
+}
+
+.header-logo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header-logo-img--light {
+  display: none;
+}
+
+.header-logo-img--dark {
+  display: block;
+}
+
+html:is([data-logo-light='true']):is([data-menu='close']):is([data-nav-menu='close'])
+  body:not(:is(.error404))
+  .header
+  .header-logo-img--light {
+  display: block;
+}
+
+html:is([data-logo-light='true']):is([data-menu='close']):is([data-nav-menu='close'])
+  body:not(:is(.error404))
+  .header
+  .header-logo-img--dark {
+  display: none;
+}
+
+html:is([data-nav-menu='open'], [data-menu='open']) .header .header-logo-img--light {
+  display: none;
+}
+
+html:is([data-nav-menu='open'], [data-menu='open']) .header .header-logo-img--dark {
+  display: block;
+}
+
+html:is([data-nav-menu='open'], [data-menu='open']) .header {
+  --header-bg: var(--color-navbar-bg);
+  --header-color: var(--color-black);
+  --logo-color: var(--color-burgundy);
+  z-index: 1001;
+}
+
+.header-button {
+  border-color: color-mix(in srgb, var(--color-cream) 55%, transparent);
+  color: inherit;
+}
+
+/* Menü ve alt menü — krem panel yalnızca mobil açılır menüde */
+@media (max-width: 78.98rem) {
+  /* ── Hamburger butonu ── */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-toggle:focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 2px;
+  }
+
+  .menu-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ── Menü panel — viewport genişliğinde, içerik kadar yükseklikte ── */
+  .menu-wrapper {
+    position: fixed !important;
+    top: var(--header-h, 5rem) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: calc(100svh - var(--header-h, 5rem)) !important;
+    padding: 1.25rem var(--container-gutter, 1.25rem) 2rem !important;
+    background-color: var(--color-cream) !important;
+    color: var(--color-black);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 0.5rem 2rem color-mix(in srgb, var(--color-black) 12%, transparent);
+    border-top: 1px solid var(--color-border);
+    z-index: 999 !important;
+    transition: opacity 0.25s ease !important;
+  }
+
+  .menu-wrapper[inert] {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .menu-wrapper:not([inert]) {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  /* ── Menü liste öğeleri ── */
+  .menu-list {
+    width: 100%;
+  }
+
+  .menu-item {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .menu-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: none;
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.875rem 0;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-black);
+  }
+
+  .menu-link .menu-arrow {
+    transition: transform 0.22s ease;
+    flex-shrink: 0;
+  }
+
+  .menu-link[aria-expanded='true'] .menu-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* ── Mobil alt menü — accordion (inline, tek sütun) ── */
+  .submenu {
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    z-index: auto !important;
+    opacity: 1 !important;
+    /* focus outline'ı kaldır */
+    outline: none !important;
+  }
+
+  .submenu,
+  .submenu:focus,
+  .submenu:focus-visible,
+  .submenu:focus-within {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .submenu[inert] {
+    display: none !important;
+  }
+
+  .submenu:not([inert]) {
+    display: block !important;
+  }
+
+  /* submenu-wrapper: 2 sütunlu grid'i tek sütuna indir */
+  .submenu-wrapper {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+    position: static !important;
+  }
+
+  .submenu .container {
+    padding-inline: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* Gizlenecekler — yüksek specificity ile */
+  .menu-wrapper .submenu-header,
+  .submenu > .container .submenu-header,
+  .submenu-header {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  .menu-wrapper .submenu-close,
+  .submenu-close {
+    display: none !important;
+  }
+
+  .submenu-content {
+    padding-block: 0 !important;
+    padding-bottom: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  /* level-1 liste — sol border ile accordion görünümü */
+  .submenu-list--level-1 {
+    display: block !important;
+    padding-inline-start: 1rem !important;
+    border-left: 2px solid var(--color-border) !important;
+    margin-left: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+    gap: 0 !important;
+  }
+
+  .submenu-item--level-1 {
+    position: static !important;
+    margin-bottom: 0.5rem !important;
+    flex: none !important;
+    width: auto !important;
+  }
+
+  .submenu-item--level-1::after {
+    display: none !important;
+  }
+
+  .submenu-list-title {
+    display: block !important;
+    font-size: 0.6875rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--color-burgundy) !important;
+    padding: 0.5rem 0 0.25rem !important;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* level-2 liste — indented linkler */
+  .submenu-list--level-2 {
+    display: block !important;
+    padding-inline-start: 0.5rem !important;
+    padding-bottom: 0.25rem !important;
+    gap: 0 !important;
+  }
+
+  .submenu-item--level-2 {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .submenu-link {
+    display: block !important;
+    font-size: 0.9375rem !important;
+    padding: 0.35rem 0 !important;
+    color: var(--color-text-muted) !important;
+    background: transparent !important;
+  }
+
+  .submenu-link:hover {
+    color: var(--color-burgundy) !important;
+    background: transparent !important;
+  }
+
+  /* Basit submenu — Hakkımızda */
+  .submenu--simple .submenu-list--level-1 {
+    border-left: 2px solid var(--color-border) !important;
+  }
+
+  .submenu--simple .submenu-item--level-1 {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  .submenu--simple .submenu-item--level-1 .submenu-link {
+    font-size: 1rem !important;
+    color: var(--color-black) !important;
+    font-weight: 500 !important;
+  }
+}
+
+.menu-item:not(.language, :first-child) {
+  border-top-color: var(--color-border);
+}
+
+/* Alt menü — TransCure: krem panel, sol başlık, sağda linkler */
+@media (min-width: 79rem) {
+  html[data-menu='open'] body:not(.error404) .header {
+    --header-bg: var(--color-navbar-bg);
+    --header-color: var(--color-black);
+    --logo-color: var(--color-burgundy);
+    z-index: 1001;
+  }
+
+  html[data-menu='open'] body:not(.error404) .header .header-logo-img--light {
+    display: none;
+  }
+
+  html[data-menu='open'] body:not(.error404) .header .header-logo-img--dark {
+    display: block;
+  }
+
+  html[data-menu='open'] .menu-link {
+    color: var(--color-black);
+  }
+
+  html[data-menu='open'] .menu-link[aria-expanded='true'] {
+    color: var(--color-burgundy);
+  }
+
+  .submenu {
+    background-color: var(--color-cream);
+    color: var(--color-black);
+    border-bottom: 1px solid #eee;
+    border-top: 2px solid color-mix(in srgb, var(--color-burgundy) 18%, #eee);
+  }
+
+  .submenu:not([inert]) {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .submenu[inert] {
+    pointer-events: none;
+  }
+
+  .submenu-header {
+    border-right: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .submenu-title {
+    color: var(--color-black);
+    font-weight: 500;
+    max-width: 16rem;
+    line-height: 1.1;
+  }
+
+  .submenu-link {
+    color: var(--color-black);
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .submenu-item:is(.submenu-item--level-1):nth-child(3n + 1)::after,
+  .submenu-item:is(.submenu-item--level-1):nth-child(3n + 2)::after {
+    background-color: #eee;
+  }
+
+  /* Hakkımızda — TransCure About: sağda dikey liste */
+  .submenu--simple .submenu-list--level-1 {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .submenu--simple .submenu-item--level-1 {
+    margin-bottom: 0;
+  }
+
+  .submenu--simple .submenu-item--level-1::after {
+    display: none !important;
+  }
+
+  /* Hizmetler — 3 sütunlu gruplu alt menü */
+  .submenu--grouped .submenu-list-title {
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+  }
+
+  .submenu--grouped .submenu-list--level-2 {
+    gap: 0.625rem;
+  }
+}
+
+.submenu:focus,
+.submenu:focus-visible {
+  outline: none;
+}
+
+.submenu-list-title {
+  color: var(--color-black);
+}
+
+.submenu-link:hover,
+.submenu-list-title:is(a):hover {
+  color: var(--color-burgundy);
+}
+
+/* Butonlar */
+.button-icon {
+  --icon-bg: var(--color-burgundy);
+  --icon-color: var(--color-cream);
+}
+
+.button--purple {
+  color: var(--color-cream);
+}
+
+.button--purple:has(svg) {
+  --icon-bg: var(--color-cream);
+  --icon-color: var(--color-burgundy);
+}
+
+.button--purple:hover {
+  background-color: var(--color-burgundy-light);
+  border-color: var(--color-burgundy-light);
+}
+
+.button--white {
+  color: var(--color-black);
+}
+
+.button--white:has(svg) {
+  --icon-bg: var(--color-black);
+  --icon-color: var(--color-cream);
+}
+
+.button--white:hover {
+  border-color: var(--color-burgundy);
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.button--white:hover:has(svg) {
+  --icon-bg: var(--color-cream);
+  --icon-color: var(--color-burgundy);
+}
+
+/* Hero ve sayfa bölümleri */
+.hero,
+.twoColsImgContent-wrapper,
+.faq-push,
+.cardsFirstBig-item:first-child {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+/* İç sayfa hero — düz bordo (görsel yok) */
+body:not(.home) .hero:not(:has(.hero-image)) {
+  min-height: 0;
+  padding-block-start: calc(var(--header-h, 112px) + 0.75rem);
+  padding-block-end: clamp(2rem, 4vw, 3rem);
+  border-radius: 0 !important;
+  margin-inline: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+body:not(.home) .hero:not(:has(.hero-image)) .hero-content {
+  margin-top: 0;
+  margin-block: 0;
+}
+
+body:not(.home) .hero:not(:has(.hero-image)) .hero-breadcrumbs,
+body:not(.home) .hero:not(:has(.hero-image)) .hero-back {
+  margin-bottom: 0.75rem;
+}
+
+/* Görsel hero — Blog tarzı breadcrumb + arka plan */
+.hero:has(.hero-image) {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  min-height: 0 !important;
+  margin-top: calc(var(--header-h, 7rem) * -1);
+  margin-inline: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  padding-block-start: calc(var(--header-h, 7rem) + 0.5rem);
+  padding-block-end: 2rem;
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.hero:has(.hero-image) .hero-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero:has(.hero-image)::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: var(--color-burgundy);
+  opacity: 0.55;
+}
+
+.hero:has(.hero-image) .hero-ctr {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* container width:100% override yaptığı için gutter'ı padding olarak ekle */
+  padding-inline: var(--container-gutter, 1.25rem);
+}
+
+.hero:has(.hero-image) .hero-breadcrumbs,
+.hero:has(.hero-image) .hero-back {
+  margin-bottom: 0.75rem;
+}
+
+.hero:has(.hero-image) .hero-breadcrumbs,
+.hero:has(.hero-image) .hero-breadcrumbs .breadcrumbs-link,
+.hero:has(.hero-image) .hero-title,
+.hero:has(.hero-image) .hero-wysiwyg,
+.hero:has(.hero-image) .hero-wysiwyg p {
+  color: var(--color-cream);
+}
+
+.hero:has(.hero-image) .hero-content {
+  opacity: 1;
+  transform: none;
+  margin-top: 0;
+  margin-block: 0;
+}
+
+.hero-breadcrumbs,
+.hero-back {
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumbs-list {
+  line-height: 1.2;
+}
+
+/* TransCure .cards — başlık sol / metin sağ, beyaz kart grid */
+.cards {
+  padding-block: clamp(3.5rem, 8.861vw, 7rem);
+  background-color: var(--color-burgundy-wash);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cards-top {
+  margin-bottom: 3.5625rem;
+}
+
+.cards-title {
+  max-width: 31.5rem;
+  margin: 0;
+  color: var(--color-black);
+  line-height: 1.05;
+}
+
+.cards-text {
+  color: var(--color-text-muted);
+}
+
+.cards-text p {
+  margin: 0;
+}
+
+.cards-text p + p {
+  margin-top: 1rem;
+}
+
+.cards-text a {
+  color: var(--color-burgundy);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.cards-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 1.5rem;
+  background-color: var(--color-cream);
+  border: none;
+  box-shadow: none;
+  padding-block: 2.5rem 2rem;
+  padding-inline: 2rem;
+}
+
+.cards-item-title {
+  margin: 0 0 1.5rem;
+  color: var(--color-black);
+}
+
+.cards-item-text {
+  margin: 0 0 2rem;
+  flex-grow: 1;
+  color: var(--color-text-muted);
+}
+
+.cards-item-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  color: var(--color-text-muted);
+}
+
+.cards-item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.5rem;
+  color: var(--color-black);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cards-item-link:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cards-item-link svg {
+  box-sizing: content-box;
+  flex-shrink: 0;
+  font-size: 0.5rem;
+  padding: 1.5em;
+  border-radius: 100%;
+  border: 1px solid var(--color-burgundy-muted);
+  background-color: transparent;
+  color: var(--color-burgundy);
+  transition: background 0.3s ease-in, color 0.3s ease-in, border-color 0.3s ease-in;
+}
+
+@media (min-width: 48rem) {
+  .cards-grid {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .cards-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cards-text {
+    max-width: 27.625rem;
+    margin-left: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .cards-item-link:hover svg {
+    background-color: var(--color-burgundy);
+    border-color: var(--color-burgundy);
+    color: var(--color-cream);
+  }
+}
+
+@media (min-width: 79rem) {
+  .cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 78.98rem) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.imageContent-image--placeholder {
+  background:
+    radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--color-cream) 22%, transparent), transparent 55%),
+    linear-gradient(150deg, var(--color-burgundy-light), var(--color-burgundy-dark));
+  min-height: 18rem;
+}
+
+/* Ekibimiz — TransCure imageContent: scroll scrub ile kutu büyür/küçülür */
+.imageContent {
+  background-color: var(--color-burgundy-wash);
+  overflow: visible;
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.imageContent-inner {
+  overflow: hidden;
+  background-color: transparent;
+  color: var(--color-cream);
+  transform-origin: center center;
+  will-change: transform, border-radius;
+  border-radius: 0;
+}
+
+.imageContent .imageContent-ctr.container {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  --container-gutter: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  background-color: var(--color-burgundy);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-cream) 32%, transparent);
+}
+
+.imageContent-content {
+  background-color: var(--color-burgundy);
+}
+
+.imageContent-title {
+  margin: 0;
+  color: var(--color-cream);
+  font-size: clamp(1.875rem, 5.5vw + 0.5rem, 2.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.imageContent-wysiwyg {
+  color: var(--color-cream);
+  font-size: clamp(1.0625rem, 1.5vw + 0.75rem, 1.25rem);
+  line-height: 1.55;
+}
+
+.imageContent-wysiwyg p {
+  margin: 0 0 1.15em;
+  color: color-mix(in srgb, var(--color-cream) 94%, transparent);
+}
+
+.imageContent-wysiwyg p:last-child {
+  margin-bottom: 0;
+}
+
+.imageContent-wysiwyg b,
+.imageContent-wysiwyg strong {
+  font-weight: 600;
+  color: var(--color-cream);
+}
+
+.imageContent-wysiwyg .button {
+  margin-top: 0.25rem;
+  font-size: clamp(0.9375rem, 1vw + 0.75rem, 1.0625rem);
+}
+
+.imageContent-image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 64rem) {
+  .imageContent-ctr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0;
+    align-items: stretch;
+    min-height: clamp(28rem, 52vw, 40rem);
+  }
+
+  .imageContent-image {
+    height: 100%;
+    min-height: clamp(28rem, 52vw, 40rem);
+  }
+
+  .imageContent-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(2.5rem, 6vw, 4rem);
+    min-height: clamp(28rem, 52vw, 40rem);
+    padding: clamp(3.25rem, 5.5vw, 5.5rem) clamp(2.5rem, 4.5vw, 5rem);
+  }
+
+  .imageContent-title {
+    max-width: 36rem;
+    font-size: clamp(2.125rem, 3.2vw + 1rem, 3.25rem);
+    line-height: 1.08;
+  }
+
+  .imageContent-wysiwyg {
+    margin-top: auto;
+    margin-left: auto;
+    max-width: min(28rem, 100%);
+    font-size: clamp(1.125rem, 0.65vw + 0.95rem, 1.3125rem);
+    line-height: 1.5;
+  }
+
+  .imageContent-wysiwyg p {
+    margin-bottom: 1.2em;
+  }
+
+  .imageContent-wysiwyg p:has(.button) {
+    margin-top: 0.35em;
+  }
+}
+
+/* Slider (cardsScroll) — TransCure: pin + yatay scrub, altta krem metin kutusu */
+.cardsScroll {
+  position: relative;
+  z-index: 5;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 4rem 6rem;
+  background-color: var(--color-burgundy-wash);
+}
+
+.cardsScroll.is-pinned {
+  z-index: 10;
+}
+
+.cardsScroll-ctr {
+  overflow: hidden;
+}
+
+.cardsScroll-top {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 3.375rem;
+  flex-shrink: 0;
+}
+
+.cardsScroll-title {
+  max-width: 32.375rem;
+  color: var(--color-black);
+}
+
+.cardsScroll-item {
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  border-radius: 1.5rem;
+  min-height: 60vh;
+}
+
+.cardsScroll-item-image {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardsScroll-item-inner {
+  border-radius: 1.5rem;
+  background-color: var(--color-cream);
+}
+
+.cardsScroll-item-title {
+  color: var(--color-burgundy);
+  line-height: 1;
+}
+
+.cardsScroll-item-text {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 64rem) {
+  .cardsScroll.is-pinned {
+    min-height: 100vh;
+  }
+
+  .cardsScroll-ctr.container {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .cardsScroll-top {
+    width: min(var(--container-width, 81rem), calc(100% - 2 * var(--container-gutter, 1.25rem)));
+    margin-inline: auto;
+    padding-inline: var(--container-gutter, 1.25rem);
+  }
+
+  .cardsScroll-list {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding-top: 10rem;
+    padding-inline: 0;
+    will-change: transform;
+  }
+
+  .cardsScroll-item {
+    flex-shrink: 0;
+    flex-basis: 65vw;
+    max-width: 52rem;
+    padding-block: 1.5rem;
+    padding-inline: 0;
+  }
+
+  .cardsScroll-item-inner {
+    padding: 2rem;
+    max-width: 26.1875rem;
+  }
+}
+
+.contentTags {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(4rem, 7.778vw, 7rem);
+  background-color: #ffffff;
+}
+
+.contentTags-ctr {
+  width: calc(100% - 2 * var(--container-gutter, 1.25rem));
+  max-width: var(--container-width, 81rem);
+  margin-inline: auto;
+}
+
+.contentTags-col:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contentTags-title {
+  max-width: 34.75rem;
+  margin: 0;
+  color: var(--color-black);
+  line-height: 1.05;
+}
+
+.contentTags-link {
+  margin-top: 2.5rem;
+}
+
+.contentTags-col:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contentTags-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contentTags-item {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 2.5rem;
+  border: 1px solid var(--tag-bg, color-mix(in srgb, var(--color-burgundy) 8%, #ffffff));
+  padding: 1.5rem 2rem;
+  background-color: var(--tag-bg, color-mix(in srgb, var(--color-burgundy) 5%, #ffffff));
+  color: var(--tag-color, var(--color-burgundy));
+  font-size: clamp(1.125rem, 1.35vw + 0.75rem, 1.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+@media (min-width: 64rem) {
+  .contentTags-ctr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+
+  .contentTags-col:last-child {
+    justify-content: flex-end;
+  }
+
+  .contentTags-list {
+    margin-inline: auto 0;
+  }
+
+  .contentTags-item {
+    white-space: nowrap;
+  }
+}
+
+/* Blog / yayın kartları — TransCure: büyük ışıldak kart + iki küçük kart grid */
+.scientificPublications {
+  padding-block: clamp(3.5rem, 8.861vw, 7rem);
+  background-color: var(--color-cream);
+}
+
+body.home .scientificPublications + .push {
+  margin-top: 0;
+}
+
+.scientificPublications-top {
+  margin-bottom: 3.375rem;
+}
+
+.scientificPublications-title {
+  max-width: 41rem;
+  color: var(--color-black);
+  line-height: 1.05;
+}
+
+.scientificPublications-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.scientificPublications-item {
+  display: flex;
+}
+
+.scientificPublications-item:first-child {
+  grid-row: 1 / span 2;
+}
+
+.scientificPubli-card {
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.scientificPubli-card--big {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  gap: 0.75rem;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 1rem;
+  background-color: var(--color-burgundy-dark);
+  color: var(--color-cream);
+}
+
+.scientificPubli-card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      ellipse 90% 80% at 8% 6%,
+      color-mix(in srgb, var(--color-burgundy-light) 88%, var(--color-cream)) 0%,
+      color-mix(in srgb, var(--color-burgundy) 45%, transparent) 38%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 92% 88%,
+      color-mix(in srgb, var(--color-burgundy) 35%, transparent) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      148deg,
+      color-mix(in srgb, var(--color-burgundy-light) 28%, var(--color-burgundy-dark)) 0%,
+      var(--color-burgundy-dark) 48%,
+      color-mix(in srgb, var(--color-burgundy) 75%, var(--color-black)) 100%
+    );
+}
+
+.scientificPubli-card--big .scientificPubli-card-image {
+  display: none;
+}
+
+.scientificPubli-card--big .scientificPubli-card-content,
+.scientificPubli-card--big .scientificPubli-card-link {
+  position: relative;
+  z-index: 1;
+}
+
+.scientificPubli-card--big .scientificPubli-card-content {
+  grid-column: 1;
+  grid-row: 2;
+  flex: 0 1 auto;
+  border-radius: 1.5rem;
+  padding-block: 2rem;
+  padding-inline: 1.75rem;
+  background-color: #ffffff;
+  color: var(--color-black);
+  max-width: min(100%, 88%);
+}
+
+.scientificPubli-card--big .scientificPubli-card-terms {
+  margin-bottom: 1.25rem;
+}
+
+.scientificPubli-card--big .scientificPubli-card-title {
+  color: var(--color-black);
+  font-size: clamp(1.3125rem, 1.2vw + 0.95rem, 1.625rem);
+  line-height: 1.3;
+}
+
+.scientificPubli-card--big .scientificPubli-card-link {
+  grid-column: 2;
+  grid-row: 2;
+  flex-shrink: 0;
+  align-self: end;
+  margin-left: 0;
+  background-color: #ffffff;
+  color: var(--color-burgundy);
+}
+
+.scientificPubli-card--big:hover .scientificPubli-card-link {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.scientificPubli-card:not(.scientificPubli-card--big) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1rem;
+  padding-block: 1.5rem 2rem;
+  padding-inline: 1.25rem;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-burgundy) 7%, transparent);
+  color: var(--color-black);
+}
+
+.scientificPubli-card:not(.scientificPubli-card--big) .scientificPubli-card-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'title link';
+  gap: 1rem;
+  align-items: end;
+}
+
+.scientificPubli-card:not(.scientificPubli-card--big) .scientificPubli-card-title {
+  grid-area: title;
+  max-width: none;
+  font-size: clamp(1.125rem, 0.85vw + 0.95rem, 1.375rem);
+  line-height: 1.3;
+}
+
+.scientificPubli-card:not(.scientificPubli-card--big) .scientificPubli-card-link {
+  grid-area: link;
+  background-color: var(--color-burgundy-soft);
+  color: var(--color-burgundy);
+}
+
+.scientificPubli-card:not(.scientificPubli-card--big):hover .scientificPubli-card-link {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.scientificPubli-card-date {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.scientificPubli-card-term {
+  border-radius: 2.5rem;
+  padding-block: 0.358em;
+  padding-inline: 0.715em;
+  background-color: var(--term-bg, var(--color-burgundy-tint));
+  color: var(--term-color, var(--color-burgundy));
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 48rem) {
+  .scientificPublications-grid {
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .scientificPublications-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .scientificPublications-grid {
+    grid-template-columns: min(28rem, 44vw) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .scientificPublications-link {
+    flex-shrink: 0;
+  }
+
+  .scientificPubli-card--big .scientificPubli-card-link {
+    margin-left: 0;
+  }
+}
+
+/* CTA push — TransCure: yuvarlak köşeli tam genişlik görsel, sol metin + sağ kart */
+.push {
+  overflow: hidden;
+  isolation: isolate;
+  position: relative;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 1.5rem;
+  margin-block: 0.5rem clamp(2rem, 4vw, 3.5rem);
+  margin-inline: auto;
+  max-width: calc(100% - 1rem);
+  width: calc(100% - 1rem);
+  padding-block: 1.25rem;
+  background-color: var(--color-cream);
+  color: var(--color-cream);
+}
+
+.push:has(.push-image) {
+  background-color: transparent;
+}
+
+.push:not(:has(.push-image)) {
+  background-color: var(--color-burgundy-dark);
+}
+
+.push::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  border: none;
+  background: linear-gradient(
+    105deg,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.18) 38%,
+    rgba(0, 0, 0, 0) 62%
+  );
+}
+
+.push-image {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: -8%;
+  display: block;
+  width: 100%;
+  height: 108%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  object-fit: cover;
+  object-position: center bottom;
+  transform: none !important;
+  will-change: auto;
+}
+
+.push-ctr {
+  position: relative;
+  z-index: 2;
+  --container-gutter: 2rem;
+  display: flex;
+}
+
+.push:has(.push-question) .push-ctr {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.push:has(.push-question) .push-text {
+  font-size: clamp(1.75rem, 3.5vw + 0.5rem, 3.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  max-width: 48rem;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.push:has(.push-question) .push-text br {
+  display: block;
+  margin-top: 0.65em;
+  content: '';
+}
+
+.push-text {
+  color: var(--color-cream);
+}
+
+.push-question {
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  background-color: var(--color-cream);
+  border: none;
+}
+
+.push-question-image {
+  display: block;
+  aspect-ratio: 328 / 196;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: none;
+}
+
+.push-question-content {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.push-question-title {
+  color: var(--color-burgundy);
+  margin: 0 0 0.5rem;
+}
+
+.push-question-text {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.push-question-link {
+  display: flex;
+  justify-content: space-between;
+  margin-top: clamp(1rem, 4.167vw, 2rem);
+}
+
+@media (min-width: 64rem) {
+  .push:has(.push-question) {
+    min-height: clamp(16rem, 24vw, 22rem);
+  }
+
+  .push-question {
+    align-self: flex-end;
+    max-width: 20.4375rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.hero .cms,
+.hero .cms p,
+.hero-breadcrumbs,
+.hero-title {
+  color: inherit;
+}
+
+.contentList,
+.twoColsImgContent,
+.tabs,
+.form {
+  background-color: var(--color-cream);
+}
+
+.cardsLight,
+.quote {
+  background-color: var(--color-burgundy-wash);
+}
+
+.cardsPush,
+.twoColsCard {
+  background-color: var(--color-burgundy-soft);
+}
+
+.cardsPush-title,
+.cardsFirstBig-item:not(:first-child) .cardsFirstBig-item-title,
+.pagination-arrow {
+  color: var(--color-burgundy);
+}
+
+.cardsLight-item,
+.cardsPush-item,
+.cardsFirstBig-item:not(:first-child),
+.quote-ctr,
+.form-ctr,
+.twoColsCard-ctr,
+.modal-inner {
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-border);
+}
+
+.cardsLight-item-icon {
+  background-color: var(--color-burgundy-wash);
+  color: var(--color-burgundy);
+}
+
+.contentList-item-text,
+.cms {
+  color: var(--color-text-muted);
+}
+
+.cms h1,
+.cms h2,
+.cms h3,
+.cms h4,
+.cms h5,
+.cms h6,
+.contentList-title,
+.contentList-item-title {
+  color: var(--color-black);
+}
+
+.link,
+.cms a:not(.button) {
+  color: var(--color-burgundy);
+}
+
+.link:hover,
+.cms a:not(.button):hover {
+  color: var(--color-burgundy-light);
+}
+
+/* Footer — TransCure: yuvarlatılmış bordo kart, logo | metin | butonlar */
+.footer {
+  width: 100%;
+  max-width: calc(100% - 1rem);
+  border-radius: 1.5rem;
+  margin-inline: auto;
+  margin-bottom: 0.5rem;
+  padding-block: 1.5rem;
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.footer-top {
+  margin-bottom: 1.75rem;
+}
+
+.footer-logo {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.footer-tagline {
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
+
+.footer-text {
+  opacity: 0.9;
+  font-size: 1.5rem;
+}
+
+.footer-text,
+.footer-text p,
+.footer-tagline {
+  color: color-mix(in srgb, var(--color-cream) 90%, transparent);
+}
+
+.footer-menu--main {
+  flex-shrink: 0;
+}
+
+.footer-menu--main .button {
+  white-space: nowrap;
+}
+
+.footer .button--white {
+  border-color: var(--color-cream);
+  background-color: var(--color-cream);
+  color: var(--color-black);
+}
+
+.footer .button--white:hover {
+  border-color: var(--color-cream);
+  background-color: color-mix(in srgb, var(--color-cream) 88%, var(--color-burgundy));
+  color: var(--color-black);
+}
+
+.footer-bottom {
+  display: flex;
+  padding-top: 1.5rem;
+  position: relative;
+  font-size: 0.875rem;
+}
+
+.footer-bottom::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-cream);
+  opacity: 0.2;
+}
+
+.footer-legals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer a,
+.footer-menu-link {
+  color: inherit;
+}
+
+.footer .footer-socials.socials .socials-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--color-cream);
+  color: var(--color-burgundy);
+  transition:
+    background-color 0.3s ease-in,
+    color 0.3s ease-in;
+}
+
+.footer .footer-socials.socials .socials-link:hover,
+.footer .footer-socials.socials .socials-link:focus-visible {
+  background-color: var(--color-burgundy) !important;
+  color: var(--color-cream) !important;
+}
+
+.footer .footer-socials.socials .socials-icon {
+  display: block;
+  width: 1.375rem;
+  height: 1.375rem;
+  min-width: 1.375rem;
+  min-height: 1.375rem;
+  fill: currentColor;
+  flex-shrink: 0;
+  transition: fill 0.3s ease-in;
+}
+
+.footer .footer-socials.socials .socials-link:hover .socials-icon,
+.footer .footer-socials.socials .socials-link:focus-visible .socials-icon,
+.footer .footer-socials.socials .socials-link:hover .socials-icon path,
+.footer .footer-socials.socials .socials-link:focus-visible .socials-icon path {
+  fill: currentColor !important;
+}
+
+@media (min-width: 48rem) {
+  .footer-legals > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-text {
+    text-align: center;
+    flex: 1;
+  }
+
+  .footer-socials {
+    margin-right: auto;
+  }
+
+  .footer-bottom {
+    justify-content: flex-end;
+  }
+}
+
+/* Formlar */
+.input,
+.ginput_container_text input,
+.ginput_container_email input,
+.ginput_container_phone input,
+.ginput_container_select select,
+.ginput_container_textarea textarea,
+.filters-select {
+  background-color: var(--color-cream);
+  border-color: var(--color-border);
+  color: var(--color-black);
+}
+
+.input:focus,
+.ginput_container_text input:focus,
+.ginput_container_email input:focus,
+.ginput_container_phone input:focus,
+.ginput_container_select select:focus,
+.ginput_container_textarea textarea:focus {
+  border-color: var(--color-burgundy);
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-burgundy) 18%, transparent);
+}
+
+.gform-theme,
+.gform_wrapper.gform-theme {
+  --gf-color-primary: var(--color-burgundy);
+  --gf-color-primary-rgb: 90, 2, 2;
+  --gf-color-primary-contrast: var(--color-cream);
+  --gf-color-primary-contrast-rgb: 255, 248, 235;
+  --gf-color-primary-darker: var(--color-burgundy-dark);
+  --gf-color-primary-lighter: var(--color-burgundy-light);
+  --gf-color-secondary: var(--color-cream);
+  --gf-color-secondary-contrast: var(--color-black);
+}
+
+/* Yardımcı yüzeyler */
+.site-logo {
+  display: inline-block;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--logo-color, inherit);
+}
+
+.site-logo--footer {
+  color: var(--color-cream);
+}
+
+.footer-logo-inner {
+  display: block;
+  width: clamp(8.5rem, 11vw + 2rem, 11.5rem);
+  height: auto;
+  aspect-ratio: 390 / 180;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.herohome:not(:has(.herohome-video-wrapper)) {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.herohome:not(:has(.herohome-video-wrapper)) .container {
+  width: 100%;
+}
+
+/* Videolu hero — TransCure: video + alttan bordoya geçiş (.bg gradient ile uyumlu) */
+.herohome--video {
+  isolation: isolate;
+  background-color: transparent;
+  color: var(--color-cream);
+}
+
+.herohome--video .herohome-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.herohome--video .herohome-video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.22) 0%,
+      transparent 38%
+    ),
+    linear-gradient(
+      0deg,
+      var(--color-home-deep) 0%,
+      color-mix(in srgb, var(--color-home-deep) 72%, transparent) 18%,
+      color-mix(in srgb, var(--color-home-deep) 28%, transparent) 42%,
+      transparent 68%
+    );
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 36rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.quote-grid {
+  margin-block: 2rem;
+}
+
+.cardsPush-grid,
+.cardsLight-grid {
+  margin-block: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .quote-grid,
+  .cardsPush-grid,
+  .cardsLight-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.875rem), 1fr));
+  }
+}
+
+@media (max-width: 47.98rem) {
+  .cardsPush-item:not(:last-child),
+  .cardsLight-item:not(:last-child),
+  .quote-ctr:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Blog listesi — TransCure news-and-events tarzı */
+body.blog .hero:has(.hero-image)::after {
+  opacity: 0.55;
+}
+
+body.blog .hero-right-inner,
+body.blog .hero-filters .filters-select {
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  border-color: var(--color-border);
+}
+
+.sectionPosts {
+  background-color: var(--color-burgundy-wash);
+}
+
+.post-card {
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  border: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.post-card-title {
+  color: var(--color-black);
+}
+
+.post-card-date {
+  color: var(--color-text-muted);
+}
+
+.post-card-link {
+  background-color: var(--color-burgundy-soft);
+  color: var(--color-burgundy);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.post-card-link:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+.pagination-arrow--next {
+  transform: rotate(180deg);
+}
+
+.pagination-link[aria-current='true'] {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+/* Blog detay — TransCure single post */
+body.single-post .hero {
+  background-color: var(--color-cream);
+}
+
+body.single-post .hero-back {
+  color: var(--color-black);
+}
+
+body.single-post .hero-term {
+  background-color: var(--color-burgundy-soft);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-border);
+}
+
+body.single-post .hero-date {
+  color: var(--color-text-muted);
+}
+
+body.single-post .hero-title {
+  color: var(--color-black);
+}
+
+/* Blog detay hero */
+.blog-detail .hero:has(.hero-image) .hero-title {
+  color: var(--color-cream);
+}
+
+.blog-detail .hero:has(.hero-image) {
+  padding-block-end: 0;
+}
+
+.blog-detail__date {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  color: rgba(255, 248, 235, 0.65);
+}
+
+/* Blog detay — hero altındaki krem boşluk sıfır */
+.blog-detail .single-main {
+  padding-block-start: 0;
+}
+
+.blog-detail .single-main .content:first-child {
+  padding-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+.blog-detail .single-main .content {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.single-main {
+  background-color: var(--color-cream);
+}
+
+.single-main .content-title {
+  color: var(--color-black);
+}
+
+.relatedPosts {
+  background-color: var(--color-burgundy-wash);
+}
+
+.relatedPosts-title {
+  color: var(--color-black);
+}

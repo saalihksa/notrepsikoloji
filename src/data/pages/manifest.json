@@ -1,0 +1,140 @@
+{
+  "/hakkimizda/": {
+    "file": "hakkimizda.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Hakkımızda | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/": {
+    "file": "hizmetler.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Hizmetlerimiz | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/bireysel-danismanlik/": {
+    "file": "hizmetler__bireysel-danismanlik.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Bireysel Danışmanlık | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/cift-danismanligi/": {
+    "file": "hizmetler__cift-danismanligi.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Çift Danışmanlığı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/ergen-danismanligi/": {
+    "file": "hizmetler__ergen-danismanligi.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Ergen Danışmanlığı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/oyun-danismanligi/": {
+    "file": "hizmetler__oyun-danismanligi.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Oyun Danışmanlığı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/online-danismanlik/": {
+    "file": "hizmetler__online-danismanlik.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Online Danışmanlık | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/anaokulu-danismanligi/": {
+    "file": "hizmetler__anaokulu-danismanligi.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Anaokulu Danışmanlığı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/psikolojik-testler/": {
+    "file": "hizmetler__psikolojik-testler.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Psikolojik Testler ve Değerlendirme | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/dikkat-gelistirme/": {
+    "file": "hizmetler__dikkat-gelistirme.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Dikkat Geliştirme Programı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/egitim-danismanligi/": {
+    "file": "hizmetler__egitim-danismanligi.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Eğitim Danışmanlığı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/sinav-koclugu/": {
+    "file": "hizmetler__sinav-koclugu.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Sınav Koçluğu | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/aile-danismanligi/": {
+    "file": "hizmetler__aile-danismanligi.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Aile Danışmanlığı | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/cinsel-danismanlik/": {
+    "file": "hizmetler__cinsel-danismanlik.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Cinsel Danışmanlık | Notre Psikoloji",
+    "assets": 0
+  },
+  "/hizmetler/kurumsal-danismanlik/": {
+    "file": "hizmetler__kurumsal-danismanlik.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Kurumsal Danışmanlık | Notre Psikoloji",
+    "assets": 0
+  },
+  "/ekibimiz/": {
+    "file": "ekibimiz.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Ekibimiz | Notre Psikoloji",
+    "assets": 0
+  },
+  "/blog/": {
+    "file": "blog.html",
+    "bodyClass": "blog wp-theme-solanum",
+    "title": "Blog | Notre Psikoloji",
+    "assets": 0
+  },
+  "/blog/cocuk-odevde-odaklanamiyorsa-dikkat-programi/": {
+    "file": "blog__cocuk-odevde-odaklanamiyorsa-dikkat-programi.html",
+    "bodyClass": "wp-singular post-template-default single single-post wp-theme-solanum",
+    "title": "Çocuk ödevde odaklanamıyorsa dikkat geliştirme programı ne zaman gerekir? | Notre Psikoloji",
+    "assets": 0
+  },
+  "/blog/online-terapi-guvenli-mi/": {
+    "file": "blog__online-terapi-guvenli-mi.html",
+    "bodyClass": "wp-singular post-template-default single single-post wp-theme-solanum",
+    "title": "Online terapi güvenli mi, güvenilir psikolog nasıl seçilir? | Notre Psikoloji",
+    "assets": 0
+  },
+  "/blog/wisc-iv-zeka-testi/": {
+    "file": "blog__wisc-iv-zeka-testi.html",
+    "bodyClass": "wp-singular post-template-default single single-post wp-theme-solanum",
+    "title": "WISC-IV zeka testi nedir, çocuğa ne zaman yaptırılır? | Notre Psikoloji",
+    "assets": 0
+  },
+  "/sss/": {
+    "file": "sss.html",
+    "bodyClass": "wp-singular page wp-theme-solanum",
+    "title": "Sıkça Sorulan Sorular | Notre Psikoloji",
+    "assets": 0
+  },
+  "/iletisim/": {
+    "file": "iletisim.html",
+    "bodyClass": "wp-singular page-template page-template-contact page wp-theme-solanum",
+    "title": "İletişim ve Randevu | Notre Psikoloji",
+    "assets": 0
+  },
+  "/kvkk/": {
+    "file": "kvkk.html",
+    "bodyClass": "privacy-policy wp-singular page wp-theme-solanum",
+    "title": "KVKK ve Gizlilik | Notre Psikoloji",
+    "assets": 0
+  }
+}

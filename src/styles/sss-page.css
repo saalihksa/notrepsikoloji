@@ -1,0 +1,233 @@
+/* ============================================================
+   SSS — 2 Sütunlu Modern Accordion
+   ============================================================ */
+
+.sss-page {
+  background-color: var(--color-cream);
+}
+
+.sss-section {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+.sss-container {
+  max-width: none;
+}
+
+/* Başlık alanı */
+.sss-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  max-width: 40rem;
+}
+
+.sss-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+}
+
+.sss-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-black);
+}
+
+.sss-desc {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+/* 2 sütun — column-count ile eşit hizalama */
+.sss-grid {
+  columns: 1;
+  column-gap: 0;
+}
+
+@media (min-width: 64rem) {
+  .sss-grid {
+    columns: 2;
+    column-gap: 4rem;
+  }
+}
+
+/* Accordion item */
+.sss-item {
+  break-inside: avoid;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-black) 10%, transparent);
+}
+
+.sss-item:first-child {
+  border-top: 1px solid color-mix(in srgb, var(--color-black) 10%, transparent);
+}
+
+/* Summary */
+.sss-item__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.125rem 0;
+  font-size: clamp(1rem, 1.15vw, 1.0625rem);
+  font-weight: 500;
+  color: var(--color-black);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+/* Tüm tarayıcılarda native marker gizle */
+.sss-item__summary::-webkit-details-marker,
+.sss-item__summary::marker {
+  display: none;
+  content: '';
+}
+
+details > .sss-item__summary {
+  list-style: none;
+}
+
+/* Chevron CSS ile */
+.sss-item__summary::after {
+  content: '';
+  flex-shrink: 0;
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.22s ease, color 0.2s ease;
+  opacity: 0.5;
+}
+
+.sss-item__summary:hover {
+  color: var(--color-burgundy);
+}
+
+.sss-item__summary:hover::after {
+  opacity: 1;
+}
+
+/* Açık durum */
+.sss-item[open] > .sss-item__summary {
+  color: var(--color-burgundy);
+}
+
+.sss-item[open] > .sss-item__summary::after {
+  transform: rotate(225deg) translateY(-2px);
+  opacity: 1;
+}
+
+/* Body / cevap */
+.sss-item__body {
+  padding-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.sss-item__body p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 42rem;
+}
+
+/* Animasyon — details/summary native interpolation desteği varsa */
+@supports (interpolate-size: allow-keywords) {
+  .sss-item {
+    interpolate-size: allow-keywords;
+  }
+
+  .sss-item__body {
+    height: 0;
+    transition: height 0.3s ease;
+  }
+
+  .sss-item[open] .sss-item__body {
+    height: auto;
+  }
+}
+
+/* CTA alt bölümü */
+.sss-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 1.25rem;
+  background-color: var(--color-burgundy-tint);
+}
+
+.sss-cta__text {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.sss-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 47.98rem) {
+  .sss-header {
+    max-width: 100%;
+  }
+
+  .sss-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sss-cta__actions {
+    flex-direction: column;
+  }
+
+  .sss-cta__actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sss-item__summary {
+    font-size: 0.9375rem;
+    padding: 1rem 0;
+  }
+}
+
+/* Outline bordo butonu */
+.button--outline-burgundy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1.5px solid var(--color-burgundy);
+  border-radius: 999px;
+  background-color: transparent;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-burgundy);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button--outline-burgundy:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}

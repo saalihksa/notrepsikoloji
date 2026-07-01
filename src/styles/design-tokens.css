@@ -1,0 +1,62 @@
+/* Notre Psikoloji — bordo / krem / siyah paleti */
+
+:root {
+  --font-sans: 'PP Neue Montreal', sans-serif;
+
+  /* Ana renkler */
+  --color-burgundy: #5a0202;
+  --color-cream: #fff8eb;
+  --color-navbar-bg: #fcf6eb;
+  --color-black: #000000;
+
+  /* Paletten türetilmiş tonlar (color-mix ile tutarlı hiyerarşi) */
+  --color-burgundy-dark: color-mix(in srgb, var(--color-burgundy) 88%, var(--color-black));
+  --color-burgundy-mid: var(--color-burgundy);
+  --color-burgundy-light: color-mix(in srgb, var(--color-burgundy) 72%, var(--color-cream));
+  --color-burgundy-muted: color-mix(in srgb, var(--color-burgundy) 38%, var(--color-cream));
+  --color-burgundy-tint: color-mix(in srgb, var(--color-burgundy) 10%, var(--color-cream));
+  --color-burgundy-wash: color-mix(in srgb, var(--color-burgundy) 6%, var(--color-cream));
+  --color-burgundy-soft: color-mix(in srgb, var(--color-burgundy) 16%, var(--color-cream));
+  /* Ana sayfa: hero sonrası derin bölüm (TransCure #442387 karşılığı) */
+  --color-home-deep: color-mix(in srgb, var(--color-burgundy) 58%, var(--color-black));
+
+  /* Metin tonları (siyah tabanlı) */
+  --color-text-muted: color-mix(in srgb, var(--color-black) 65%, transparent);
+  --color-text-soft: color-mix(in srgb, var(--color-black) 42%, transparent);
+  --color-border: color-mix(in srgb, var(--color-burgundy) 14%, transparent);
+
+  /* Orijinal tema değişkenlerinin map'i */
+  --c-black: var(--color-black);
+  --c-very-dark-grey: var(--color-black);
+  --c-dark-grey: var(--color-text-muted);
+  --c-grey: var(--color-text-soft);
+  --c-light-grey: var(--color-border);
+  --c-very-light-grey: var(--color-cream);
+  --c-white: var(--color-cream);
+
+  --c-purple: var(--color-burgundy);
+  --c-purple--2: var(--color-burgundy-dark);
+  --c-purple--3: var(--color-burgundy-light);
+  --c-purple--light: var(--color-burgundy-muted);
+  --c-purple--light-2: var(--color-burgundy-soft);
+  --c-purple--light-3: var(--color-burgundy-wash);
+
+  --c-blue: var(--color-black);
+  --c-blue--light: var(--color-text-muted);
+  --c-blue--light-2: var(--color-text-soft);
+
+  --c-white--light: var(--color-burgundy-wash);
+  --c-grey--light: var(--color-burgundy-wash);
+  --c-grey--700: var(--color-text-muted);
+  --c-grey--800: var(--color-black);
+
+  --container-gutter: clamp(1.25rem, 3.907vw, 2.5rem);
+  --container-width: 81rem;
+  --header-height: 112px;
+  --side-margin: clamp(20px, 3.5vw, 70px);
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-pill: 4.25em;
+}

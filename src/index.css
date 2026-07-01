@@ -1,0 +1,65 @@
+@import './styles/original-app.css';
+@import './styles/design-tokens.css';
+@import './styles/theme-overrides.css';
+@import './styles/mobile-overrides.css';
+
+@import './styles/team-page.css';
+@import './styles/appointment-page.css';
+@import './styles/contact-page.css';
+@import './styles/service-pages.css';
+@import './styles/about-page.css';
+@import './styles/sss-page.css';
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: contents;
+}
+
+.site-chrome {
+  display: contents;
+}
+
+:root {
+  --header-h: 7rem;
+  --header-o: 7rem;
+  --header-offset: 7rem;
+  --viewport-height: 100dvh;
+}
+
+html[data-animations-ready='false'] [data-animate-child],
+html[data-animations-ready='false'] [data-animate-text]:not(:has(.reveal-line)),
+html[data-animations-ready='false'] [data-animate-text] .reveal-line div {
+  visibility: visible !important;
+}
+
+html[data-animations-ready='false'] .hero-content {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+html[data-animations-ready='false'] [data-animate-parallax] {
+  transform: scale(1) !important;
+}
+
+.herohome-title,
+.herohome-tagline,
+.herohome-text {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+}
