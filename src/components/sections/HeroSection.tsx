@@ -1,3 +1,4 @@
+import { asset } from '../../utils/asset'
 import { site } from '../../data/content'
 
 export function HeroSection() {
@@ -26,7 +27,7 @@ export function HeroSection() {
             <div className="absolute -right-8 -top-8 h-64 w-64 rounded-full bg-purple-light/60 blur-3xl" />
             <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-white p-2 shadow-2xl shadow-purple/10">
               <img
-                src="/assets/scientist.webp"
+                src={asset("/assets/scientist.webp")}
                 alt="Scientist at work"
                 className="aspect-[4/3] w-full rounded-[1.25rem] object-cover"
               />

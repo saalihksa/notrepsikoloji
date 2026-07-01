@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 import { Link } from 'react-router-dom'
 import { useMeta } from '../hooks/useMeta'
 
@@ -50,7 +51,7 @@ export function SssPage() {
   return (
     <main id="contenu-principal" className="wrapper sss-page">
       <section className="hero">
-        <img src="/assets/cta-bg.png" alt="" width={1920} height={631} loading="lazy" className="hero-image" />
+        <img src={asset("/assets/cta-bg.png")} alt="" width={1920} height={631} loading="lazy" className="hero-image" />
         <div className="hero-ctr container">
           <nav aria-label="Sayfa konumu" className="hero-breadcrumbs breadcrumbs">
             <ul className="breadcrumbs-list">

@@ -1,3 +1,4 @@
+import { asset } from '../../utils/asset'
 export function TeamSection() {
   return (
     <section className="py-16 md:py-24">
@@ -26,7 +27,7 @@ export function TeamSection() {
           <div className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-[var(--radius-card)] bg-white p-2 shadow-xl shadow-purple/10">
               <img
-                src="/assets/team.webp"
+                src={asset("/assets/team.webp")}
                 alt="TransCure bioServices team"
                 className="aspect-[4/3] w-full rounded-[1.25rem] object-cover"
               />

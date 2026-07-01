@@ -1,3 +1,4 @@
+import { asset } from '../../utils/asset'
 function BreadcrumbArrow() {
   return (
     <svg aria-hidden="true" className="breadcrumbs-arrow icon" viewBox="0 0 17 16">
@@ -35,7 +36,7 @@ export function PageHero({ title, description, breadcrumbs, currentPage }: PageH
   return (
     <section className="hero">
       <img
-        src="/assets/cta-bg.png"
+        src={asset("/assets/cta-bg.png")}
         alt=""
         width={1920}
         height={631}

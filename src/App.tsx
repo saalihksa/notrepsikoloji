@@ -65,7 +65,7 @@ function AppRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/notrepsikoloji">
       <AppRoutes />
     </BrowserRouter>
   )

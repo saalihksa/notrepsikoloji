@@ -3,12 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // GitHub Pages SPA yönlendirme — tüm 404'leri index.html'e ilet
       var l = window.location
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1).join('/') +
-        '/?p=' + encodeURIComponent(l.pathname + l.search) +
+        '/notrepsikoloji/?p=' + encodeURIComponent(l.pathname.replace('/notrepsikoloji', '') + l.search) +
         (l.hash ? '&h=' + encodeURIComponent(l.hash) : '')
       )
     </script>

@@ -1,3 +1,4 @@
+import { asset } from '../../utils/asset'
 import { Button } from '../ui/Button'
 
 export function ContactCtaSection() {
@@ -8,7 +9,7 @@ export function ContactCtaSection() {
           <div className="grid lg:grid-cols-2">
             <div className="relative min-h-[280px] lg:min-h-full">
               <img
-                src="/assets/team.webp"
+                src={asset("/assets/team.webp")}
                 alt="TransCure bioServices laboratory"
                 className="absolute inset-0 h-full w-full object-cover"
               />
@@ -26,7 +27,7 @@ export function ContactCtaSection() {
               <div className="mt-10 rounded-[var(--radius-card)] bg-bg p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <img
-                    src="/assets/scientist.webp"
+                    src={asset("/assets/scientist.webp")}
                     alt=""
                     className="h-16 w-16 shrink-0 rounded-2xl object-cover"
                   />

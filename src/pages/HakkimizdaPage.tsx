@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 import { Link } from 'react-router-dom'
 import { useMeta } from '../hooks/useMeta'
 
@@ -13,7 +14,7 @@ export function HakkimizdaPage() {
   return (
     <main id="contenu-principal" className="wrapper">
       <section className="hero">
-        <img src="/assets/cta-bg.png" alt="" width={1920} height={631} loading="lazy" className="hero-image" />
+        <img src={asset("/assets/cta-bg.png")} alt="" width={1920} height={631} loading="lazy" className="hero-image" />
         <div className="hero-ctr container">
           <nav aria-label="Sayfa konumu" className="hero-breadcrumbs breadcrumbs">
             <ul className="breadcrumbs-list">
@@ -87,7 +88,7 @@ export function HakkimizdaPage() {
       <section className="imageContent">
         <div className="imageContent-inner">
           <div className="imageContent-ctr container container--fluid">
-            <img src="/assets/team-space.png" alt="Notre Psikoloji ekibi" width={1024} height={683} loading="lazy" className="imageContent-image" />
+            <img src={asset("/assets/team-space.png")} alt="Notre Psikoloji ekibi" width={1024} height={683} loading="lazy" className="imageContent-image" />
             <div className="imageContent-content">
               <h2 className="imageContent-title title-xl">Uzman kadromuzla tanışın</h2>
               <div className="imageContent-wysiwyg">

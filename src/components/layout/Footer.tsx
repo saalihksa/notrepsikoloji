@@ -1,3 +1,4 @@
+import { asset } from '../../utils/asset'
 export function Footer() {
   return (
     <footer id="pied-de-page" className="bg-navy text-white">
@@ -5,7 +6,7 @@ export function Footer() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
             <img
-              src="/assets/logo.svg"
+              src={asset("/assets/logo.svg")}
               alt="TransCure bioServices"
               className="h-10 brightness-0 invert"
             />

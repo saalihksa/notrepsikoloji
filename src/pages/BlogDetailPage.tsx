@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 import { Navigate, useParams } from 'react-router-dom'
 import { getBlogPost } from '../data/blogPosts'
 import { useMeta } from '../hooks/useMeta'
@@ -13,7 +14,7 @@ export function BlogDetailPage() {
   return (
     <main id="contenu-principal" className="wrapper blog-detail">
       <section className="hero">
-        <img src="/assets/cta-bg.png" alt="" width={1920} height={631} loading="eager" className="hero-image" />
+        <img src={asset("/assets/cta-bg.png")} alt="" width={1920} height={631} loading="eager" className="hero-image" />
         <div className="hero-ctr container">
           <div className="hero-content">
             <div>
