@@ -21,7 +21,8 @@ function resolveBodyClass(pathname: string): string {
   if (p === '/blog/') return `blog ${BASE}`
   // Hizmet detay
   if (p.startsWith('/hizmetler/') && p !== '/hizmetler/') return `page ${BASE}`
-  // Diğer React sayfaları
+  // Ekip detay
+  if (p.startsWith('/ekibimiz/') && p !== '/ekibimiz/') return `page ${BASE}`
   if (p === '/hakkimizda/' || p === '/sss/' || p === '/kvkk/') return `page ${BASE}`
   // İletişim / Ekibimiz / Randevu
   if (p === '/iletisim/' || p === '/ekibimiz/' || p === '/randevu/') return `page ${BASE}`

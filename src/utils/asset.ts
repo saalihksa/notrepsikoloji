@@ -14,6 +14,6 @@ export function patchHtmlPaths(html: string): string {
     .replace(/href="\/assets\//g, `href="${BASE}/assets/`)
     .replace(/srcset="\/assets\//g, `srcset="${BASE}/assets/`)
     .replace(/url\(\/assets\//g, `url(${BASE}/assets/`)
-    .replace(/src="\/wp-content\//g, `src="${BASE}/wp-content/`)
+    .replace(/src="\/wp-content\//g, `src="${BASE}/wp-content/`) // legacy compat
     .replace(/, \/assets\//g, `, ${BASE}/assets/`)
 }

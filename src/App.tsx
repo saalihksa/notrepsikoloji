@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage'
 import { AppointmentPage } from './pages/AppointmentPage'
 import { ContactPage } from './pages/ContactPage'
 import { TeamPage } from './pages/TeamPage'
+import { TeamDetailPage } from './pages/TeamDetailPage'
 import { HakkimizdaPage } from './pages/HakkimizdaPage'
 import { HizmetlerPage } from './pages/HizmetlerPage'
 import { ServiceDetailPage } from './pages/ServiceDetailPage'
@@ -28,6 +29,8 @@ function AppRoutes() {
         {/* Ekip, Randevu, İletişim */}
         <Route path="/ekibimiz" element={<TeamPage />} />
         <Route path="/ekibimiz/" element={<TeamPage />} />
+        <Route path="/ekibimiz/:id" element={<TeamDetailPage />} />
+        <Route path="/ekibimiz/:id/" element={<TeamDetailPage />} />
         <Route path="/randevu" element={<AppointmentPage />} />
         <Route path="/randevu/" element={<AppointmentPage />} />
         <Route path="/iletisim" element={<ContactPage />} />
@@ -65,7 +68,7 @@ function AppRoutes() {
 
 function App() {
   return (
-    <BrowserRouter basename="/notrepsikoloji">
+    <BrowserRouter>
       <AppRoutes />
     </BrowserRouter>
   )

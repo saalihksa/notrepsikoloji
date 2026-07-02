@@ -701,14 +701,6 @@
     padding-block: 2rem;
   }
 
-  .contact-slim {
-    gap: 2rem;
-  }
-
-  .contact-slim__map {
-    height: 12rem;
-  }
-
   /* ── Hakkımızda — cards grid ── */
   .hakkimizda-cards .cards-grid {
     grid-template-columns: 1fr;
